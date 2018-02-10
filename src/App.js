@@ -3,6 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  componentWillMount = () => {
+    // computed property syntax
+    // const key = "one"
+    const key = {
+      toString: () => "one"
+    };
+    const t = {
+      [key](a) {
+        return a+1;
+      }
+    };
+    const r = t.one(3);
+    console.log( "result:", r);
+  };
   render() {
     return (
       <div className="App">
